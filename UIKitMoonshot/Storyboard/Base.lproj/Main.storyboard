@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,9 +18,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Wzk-2u-KEn">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Wzk-2u-KEn">
                                 <rect key="frame" x="0.0" y="103" width="393" height="715"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.10000000000000001" green="0.10000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="l6g-zX-CG0">
                                     <size key="itemSize" width="172" height="218"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -34,35 +36,56 @@
                                             <rect key="frame" x="0.0" y="0.0" width="172" height="218"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Q2E-Ti-e4N">
-                                                    <rect key="frame" x="5" y="5" width="162" height="203"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Q2E-Ti-e4N">
+                                                    <rect key="frame" x="0.0" y="0.0" width="172" height="218"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="apollo7" translatesAutoresizingMaskIntoConstraints="NO" id="Kmf-zh-2rt">
-                                                            <rect key="frame" x="0.0" y="0.0" width="162" height="162"/>
+                                                            <rect key="frame" x="30" y="0.0" width="112" height="150"/>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apollo 7" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dK8-zV-gIR">
-                                                            <rect key="frame" x="43" y="162" width="76" height="24"/>
-                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oct 11, 1968" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dJ9-Ev-Moc">
-                                                            <rect key="frame" x="41" y="186" width="80" height="17"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="-10" translatesAutoresizingMaskIntoConstraints="NO" id="dde-bg-ZEF">
+                                                            <rect key="frame" x="0.0" y="158" width="172" height="60"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apollo 7" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dK8-zV-gIR">
+                                                                    <rect key="frame" x="48" y="0.0" width="76" height="35"/>
+                                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oct 11, 1968" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dJ9-Ev-Moc">
+                                                                    <rect key="frame" x="46" y="25" width="80" height="35"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                    <color key="textColor" systemColor="systemGray4Color"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.29999999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="60" id="YYn-M6-7xj"/>
+                                                            </constraints>
+                                                        </stackView>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="dde-bg-ZEF" secondAttribute="bottom" id="2r7-RA-jbX"/>
+                                                        <constraint firstItem="dde-bg-ZEF" firstAttribute="leading" secondItem="Q2E-Ti-e4N" secondAttribute="leading" id="asH-ij-1HN"/>
+                                                        <constraint firstItem="Kmf-zh-2rt" firstAttribute="leading" secondItem="Q2E-Ti-e4N" secondAttribute="leading" constant="30" id="n68-Jf-rRU"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Kmf-zh-2rt" secondAttribute="trailing" constant="30" id="rh9-U9-6Bk"/>
+                                                        <constraint firstAttribute="trailing" secondItem="dde-bg-ZEF" secondAttribute="trailing" id="vjo-F3-2Cj"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <integer key="value" value="50"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Q2E-Ti-e4N" firstAttribute="top" secondItem="3W4-pR-33q" secondAttribute="top" constant="5" id="9Ur-RD-kOl"/>
-                                                <constraint firstItem="Q2E-Ti-e4N" firstAttribute="leading" secondItem="3W4-pR-33q" secondAttribute="leading" constant="5" id="M7T-yS-gdh"/>
-                                                <constraint firstAttribute="bottom" secondItem="Q2E-Ti-e4N" secondAttribute="bottom" constant="10" id="RTo-0w-RSb"/>
-                                                <constraint firstAttribute="trailing" secondItem="Q2E-Ti-e4N" secondAttribute="trailing" constant="5" id="oBR-rm-dRH"/>
+                                                <constraint firstAttribute="bottom" secondItem="Q2E-Ti-e4N" secondAttribute="bottom" id="4M0-f3-0xo"/>
+                                                <constraint firstAttribute="trailing" secondItem="Q2E-Ti-e4N" secondAttribute="trailing" id="Dga-aV-Awc"/>
+                                                <constraint firstItem="Q2E-Ti-e4N" firstAttribute="top" secondItem="3W4-pR-33q" secondAttribute="top" id="f21-gh-g3y"/>
+                                                <constraint firstItem="Q2E-Ti-e4N" firstAttribute="leading" secondItem="3W4-pR-33q" secondAttribute="leading" id="lPa-XU-XiS"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                        <color key="backgroundColor" red="0.10000000000000001" green="0.10000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <size key="customSize" width="172" height="218"/>
                                         <connections>
                                             <outlet property="missionDate" destination="dJ9-Ev-Moc" id="rPW-Q9-JKb"/>
@@ -74,13 +97,7 @@
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Wzk-2u-KEn" secondAttribute="bottom" id="JrT-oU-ZRE"/>
-                            <constraint firstItem="Wzk-2u-KEn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Nev-0a-ZAE"/>
-                            <constraint firstItem="Wzk-2u-KEn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="cdB-95-Qc8"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Wzk-2u-KEn" secondAttribute="trailing" id="gnW-yU-q2C"/>
-                        </constraints>
+                        <color key="backgroundColor" red="0.10000000000000001" green="0.10000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Moonshot" id="BZb-hf-Xse"/>
                     <connections>
@@ -99,6 +116,13 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="hZm-SJ-S07">
                         <rect key="frame" x="0.0" y="59" width="393" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -112,11 +136,8 @@
     </scenes>
     <resources>
         <image name="apollo7" width="414" height="333"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGray2Color">
-            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

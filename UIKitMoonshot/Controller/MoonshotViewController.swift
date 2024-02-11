@@ -44,6 +44,12 @@ extension MoonshotViewController: UICollectionViewDataSource {
         
         let mission = missions[indexPath.row]
         
+        moonshotCell.layer.cornerRadius = 10 // Set your desired corner radius value
+        
+        // If you want to add a border, you can also add it here
+        moonshotCell.layer.borderWidth = 1.0
+        moonshotCell.layer.borderColor = UIColor.gray.cgColor
+        
         moonshotCell.missionName.text = "Apollo \(mission.id)"
         moonshotCell.missionDate.text = mission.formattedLaunchDate
         moonshotCell.missionImage.image = UIImage(named: mission.image)
