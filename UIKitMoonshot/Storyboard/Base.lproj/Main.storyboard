@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -102,11 +103,114 @@
                     <navigationItem key="navigationItem" title="Moonshot" id="BZb-hf-Xse"/>
                     <connections>
                         <outlet property="moonshotCollectionView" destination="Wzk-2u-KEn" id="cN2-dX-YY8"/>
+                        <segue destination="VfB-D0-ics" kind="show" identifier="showDetail" id="3h9-B1-58b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1052.6717557251909" y="-27.464788732394368"/>
+        </scene>
+        <!--Moonshot Detail View Controller-->
+        <scene sceneID="5V0-Ob-wvG">
+            <objects>
+                <viewController id="VfB-D0-ics" customClass="MoonshotDetailViewController" customModule="UIKitMoonshot" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tBb-jl-3jl">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="1300"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="mNl-pb-wZ9">
+                                <rect key="frame" x="0.0" y="163.33333333333337" width="393" height="1102.6666666666665"/>
+                                <color key="backgroundColor" name="backgroundColor"/>
+                                <color key="sectionIndexBackgroundColor" name="backgroundColor"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="0Xj-8z-fR2" userLabel="Header View" customClass="MoonshotDetailHeaderView" customModule="UIKitMoonshot" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="264"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="rDB-2e-KEd">
+                                            <rect key="frame" x="0.0" y="-0.33333333333337123" width="393" height="200"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" name="backgroundColor"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11 October 1968 Friday" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VDp-fa-f4D">
+                                            <rect key="frame" x="0.0" y="209.66666666666666" width="393" height="44.333333333333343"/>
+                                            <color key="backgroundColor" name="backgroundColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" name="backgroundColor"/>
+                                    <constraints>
+                                        <constraint firstItem="VDp-fa-f4D" firstAttribute="top" secondItem="rDB-2e-KEd" secondAttribute="bottom" constant="10" id="Ghh-GP-oBA"/>
+                                        <constraint firstAttribute="bottom" secondItem="VDp-fa-f4D" secondAttribute="bottom" constant="10" id="Jpz-1A-eTn"/>
+                                        <constraint firstItem="VDp-fa-f4D" firstAttribute="leading" secondItem="0Xj-8z-fR2" secondAttribute="leading" id="irE-kj-kiK"/>
+                                        <constraint firstAttribute="trailing" secondItem="VDp-fa-f4D" secondAttribute="trailing" id="pkZ-R5-Dc5"/>
+                                    </constraints>
+                                    <connections>
+                                        <outlet property="missionDateLabel" destination="VDp-fa-f4D" id="kc6-HD-LgC"/>
+                                        <outlet property="missionHeaderImageView" destination="rDB-2e-KEd" id="USB-yn-Tik"/>
+                                    </connections>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MissionDetailTextCell" rowHeight="543" id="Mvu-Wb-RKy" customClass="MissionHighlightTableViewCell" customModule="UIKitMoonshot" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="314" width="393" height="543"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mvu-Wb-RKy" id="dGP-DA-Foo">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="543"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mission Highlights" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GFH-q5-Vqp">
+                                                    <rect key="frame" x="25" y="16" width="343" height="24"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AQW-a4-GMH">
+                                                    <rect key="frame" x="20" y="50" width="353" height="483"/>
+                                                    <mutableString key="text">Apollo 7 was an October 1968 human spaceflight mission carried out by the United States. It was the first mission in the United States' Apollo program to carry a crew into space. It was also the first U.S. spaceflight to carry astronauts since the flight of Gemini XII in November 1966.The AS-204 mission, also known as Apollo 1, was intended to be the first crewed flight of the Apollo program. It was scheduled to launch in February 1967, but a fire in the cabin during a January 1967 test killed the crew.Crewed flights were then suspended for 21 months, while the cause of the accident was investigated and improvements made to the spacecraft and safety procedures, and uncrewed test flights of the Saturn V rocket and Apollo Lunar Module were made. Apollo 7 fulfilled Apollo 1's mission of testing the Apollo command and service module (CSM) in low Earth orbit.</mutableString>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" name="backgroundColor"/>
+                                            <constraints>
+                                                <constraint firstItem="AQW-a4-GMH" firstAttribute="top" secondItem="GFH-q5-Vqp" secondAttribute="bottom" constant="10" id="5rb-vn-uVB"/>
+                                                <constraint firstItem="GFH-q5-Vqp" firstAttribute="top" secondItem="dGP-DA-Foo" secondAttribute="topMargin" constant="5" id="U4V-C3-kmU"/>
+                                                <constraint firstAttribute="bottom" secondItem="AQW-a4-GMH" secondAttribute="bottom" constant="10" id="WBz-9M-etQ"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="GFH-q5-Vqp" secondAttribute="trailing" constant="5" id="cqT-V2-Eyg"/>
+                                                <constraint firstItem="GFH-q5-Vqp" firstAttribute="leading" secondItem="dGP-DA-Foo" secondAttribute="leadingMargin" constant="5" id="gLQ-AE-WWL"/>
+                                                <constraint firstAttribute="trailing" secondItem="AQW-a4-GMH" secondAttribute="trailing" constant="20" id="tQV-FY-dkh"/>
+                                                <constraint firstItem="AQW-a4-GMH" firstAttribute="leading" secondItem="dGP-DA-Foo" secondAttribute="leading" constant="20" id="vW9-QZ-Q0i"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" name="backgroundColor"/>
+                                        <connections>
+                                            <outlet property="missionDetailDescription" destination="AQW-a4-GMH" id="9gj-JR-KR6"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="mgP-n2-vd8"/>
+                        <color key="backgroundColor" name="backgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="mgP-n2-vd8" firstAttribute="trailing" secondItem="mNl-pb-wZ9" secondAttribute="trailing" id="1ST-lR-c2V"/>
+                            <constraint firstItem="mNl-pb-wZ9" firstAttribute="leading" secondItem="mgP-n2-vd8" secondAttribute="leading" id="UQF-XI-VW2"/>
+                            <constraint firstItem="mNl-pb-wZ9" firstAttribute="top" secondItem="mgP-n2-vd8" secondAttribute="top" id="dEN-6e-XW7"/>
+                            <constraint firstItem="mgP-n2-vd8" firstAttribute="bottom" secondItem="mNl-pb-wZ9" secondAttribute="bottom" id="kxT-hm-Bm2"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="SpK-YQ-PzB"/>
+                    <size key="freeformSize" width="393" height="1300"/>
+                    <connections>
+                        <outlet property="headerView" destination="0Xj-8z-fR2" id="YMT-vE-IWO"/>
+                        <outlet property="tableView" destination="mNl-pb-wZ9" id="kB6-3n-19P"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Gy-Ka-GmR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1962.5954198473282" y="-27.464788732394368"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kDx-hQ-fFS">
@@ -114,7 +218,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gRU-QI-6cd" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="hZm-SJ-S07">
-                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
+                        <rect key="frame" x="0.0" y="59" width="393" height="104.33333333333334"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="titleTextAttributes">
@@ -136,6 +240,9 @@
     </scenes>
     <resources>
         <image name="apollo7" width="414" height="333"/>
+        <namedColor name="backgroundColor">
+            <color red="0.10000000000000001" green="0.10000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemGray4Color">
             <color red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

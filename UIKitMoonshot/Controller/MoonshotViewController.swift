@@ -8,7 +8,7 @@
 import UIKit
 
 class MoonshotViewController: UIViewController {
-
+    
     @IBOutlet weak var moonshotCollectionView: UICollectionView!
     
     private var identifier = "moonshotCell"
@@ -18,14 +18,14 @@ class MoonshotViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         moonshotCollectionView.dataSource = self
         moonshotCollectionView.delegate = self
         
         missions = Bundle.main.decode(from: "missions.json")
     }
-
+    
 }
 
 extension MoonshotViewController: UICollectionViewDelegate {
@@ -57,10 +57,24 @@ extension MoonshotViewController: UICollectionViewDataSource {
         return moonshotCell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showDetail", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetail" {
+            if let indexPath = moonshotCollectionView.indexPathsForSelectedItems?.first {
+                let destinationController = segue.destination as! MoonshotDetailViewController
+                destinationController.mission = self.missions[indexPath.row]
+            }
+        }
+    }
+    
     
 }
 
 // MARK: - Configuring collection view cells size
+
 extension MoonshotViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
