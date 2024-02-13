@@ -65,52 +65,20 @@ extension MoonshotDetailViewController: UICollectionViewDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "crew", for: indexPath) as! MissionCrewCollectionViewCell
         
-        cell.layer.cornerRadius = 10
+        cell.layer.cornerRadius = 30
         cell.layer.borderWidth = 1.0
         cell.layer.borderColor = UIColor.gray.cgColor
         
         if let mission = mission {
-            let crewMember = mission.crew[indexPath.item] // İlgili görevin mürettebat üyesini al
-            if let astronaut = astronauts[crewMember.name] { // Astronotları anahtarı kullanarak bul
+            let crewMember = mission.crew[indexPath.item]
+            if let astronaut = astronauts[crewMember.name] {
                 cell.crewName.text = astronaut.name
                 cell.crewImage.image = UIImage(named: astronaut.id)
                 cell.crewRole.text = crewMember.role
             }
         }
         
-        
-//        let astronaut = astronauts[indexPath.row]
-//        cell.crewName.text = astronaut.name
-//        cell.crewImage.image = UIImage(named: crew?.name ?? "schirra")
-//        cell.crewRole.text = crew?.role
-        
         return cell
     }
     
 }
-
-
-// MARK: - Configuring collection view cells size
-
-//extension MoonshotDetailViewController: UICollectionViewDelegateFlowLayout {
-//    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        
-//        let itemsPerRow: CGFloat = 1
-//        let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
-//        let availableWidth = view.frame.width - paddingSpace
-//        let widthPerItem = availableWidth / itemsPerRow
-//        
-//        return CGSize(width: widthPerItem, height: widthPerItem / 2)
-//    }
-//    
-//    func collectionView(
-//        _ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-//            return sectionInsets
-//        }
-//    
-//    func collectionView(
-//        _ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-//            return sectionInsets.left
-//        }
-//}
