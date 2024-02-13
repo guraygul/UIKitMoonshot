@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		100261632B7A82C00030119A /* MoonshotDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100261622B7A82C00030119A /* MoonshotDetailHeaderView.swift */; };
 		100261652B7A847A0030119A /* MissionHighlightTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100261642B7A847A0030119A /* MissionHighlightTableViewCell.swift */; };
+		100423512B7BDA7E00A37165 /* MissionCrewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100423502B7BDA7E00A37165 /* MissionCrewCollectionViewCell.swift */; };
+		100423532B7BDE9500A37165 /* Astronaut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100423522B7BDE9500A37165 /* Astronaut.swift */; };
 		100A81AA2B6BDE3E0039CD86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A81A92B6BDE3E0039CD86 /* AppDelegate.swift */; };
 		100A81AC2B6BDE3E0039CD86 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A81AB2B6BDE3E0039CD86 /* SceneDelegate.swift */; };
 		100A81B12B6BDE3E0039CD86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 100A81AF2B6BDE3E0039CD86 /* Main.storyboard */; };
@@ -26,6 +28,8 @@
 /* Begin PBXFileReference section */
 		100261622B7A82C00030119A /* MoonshotDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonshotDetailHeaderView.swift; sourceTree = "<group>"; };
 		100261642B7A847A0030119A /* MissionHighlightTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionHighlightTableViewCell.swift; sourceTree = "<group>"; };
+		100423502B7BDA7E00A37165 /* MissionCrewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionCrewCollectionViewCell.swift; sourceTree = "<group>"; };
+		100423522B7BDE9500A37165 /* Astronaut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Astronaut.swift; sourceTree = "<group>"; };
 		100A81A62B6BDE3E0039CD86 /* UIKitMoonshot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitMoonshot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		100A81A92B6BDE3E0039CD86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		100A81AB2B6BDE3E0039CD86 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +93,7 @@
 				100A81BF2B6BE9690039CD86 /* missions.json */,
 				100A81C02B6BE9690039CD86 /* astronauts.json */,
 				100A81CC2B6C14960039CD86 /* Bundle-Decodable.swift */,
+				100423522B7BDE9500A37165 /* Astronaut.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -99,6 +104,7 @@
 				100A81CA2B6BED110039CD86 /* MoonshotCollectionViewCell.swift */,
 				100261622B7A82C00030119A /* MoonshotDetailHeaderView.swift */,
 				100261642B7A847A0030119A /* MissionHighlightTableViewCell.swift */,
+				100423502B7BDA7E00A37165 /* MissionCrewCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -205,11 +211,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				100A81C82B6BEA330039CD86 /* Mission.swift in Sources */,
+				100423532B7BDE9500A37165 /* Astronaut.swift in Sources */,
 				100A81CB2B6BED110039CD86 /* MoonshotCollectionViewCell.swift in Sources */,
 				100A81AA2B6BDE3E0039CD86 /* AppDelegate.swift in Sources */,
 				100A81AC2B6BDE3E0039CD86 /* SceneDelegate.swift in Sources */,
 				100A81BE2B6BE8AB0039CD86 /* MoonshotViewController.swift in Sources */,
 				100261652B7A847A0030119A /* MissionHighlightTableViewCell.swift in Sources */,
+				100423512B7BDA7E00A37165 /* MissionCrewCollectionViewCell.swift in Sources */,
 				100A81CD2B6C14960039CD86 /* Bundle-Decodable.swift in Sources */,
 				10D5A6E92B79271400B4A377 /* MoonshotDetailViewController.swift in Sources */,
 				100261632B7A82C00030119A /* MoonshotDetailHeaderView.swift in Sources */,
