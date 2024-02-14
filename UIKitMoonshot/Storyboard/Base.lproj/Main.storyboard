@@ -284,11 +284,91 @@
                         <outlet property="collectionView" destination="jyE-Tr-FFm" id="9mr-RN-LGd"/>
                         <outlet property="headerView" destination="0Xj-8z-fR2" id="YMT-vE-IWO"/>
                         <outlet property="tableView" destination="mNl-pb-wZ9" id="kB6-3n-19P"/>
+                        <segue destination="uyl-iB-y5T" kind="show" identifier="showAstronautDetail" id="YDo-Kh-Kwp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Gy-Ka-GmR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1962.5954198473282" y="-27.464788732394368"/>
+        </scene>
+        <!--Astronaut Detail View Controller-->
+        <scene sceneID="9D0-5c-8wK">
+            <objects>
+                <viewController id="uyl-iB-y5T" customClass="AstronautDetailViewController" customModule="UIKitMoonshot" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vG9-04-MFq">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="E8l-XS-i2D">
+                                <rect key="frame" x="0.0" y="155" width="393" height="663"/>
+                                <color key="backgroundColor" name="backgroundColor"/>
+                                <color key="sectionIndexBackgroundColor" name="backgroundColor"/>
+                                <view key="tableHeaderView" contentMode="scaleAspectFill" id="KB5-Mv-djX" customClass="AstronautDetailImageView" customModule="UIKitMoonshot" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="260"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="1sn-lw-r1Q">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="260"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" name="backgroundColor"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" name="backgroundColor"/>
+                                    <connections>
+                                        <outlet property="astronautDetailImageView" destination="1sn-lw-r1Q" id="qon-da-pDR"/>
+                                    </connections>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="astronaut" rowHeight="256" id="pBz-Oi-UKo" customClass="AstronautDetailTableViewCell" customModule="UIKitMoonshot" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="310" width="393" height="256"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pBz-Oi-UKo" id="9vA-70-mlP">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="256"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Walter Marty" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QHy-6h-bmI">
+                                                    <rect key="frame" x="25" y="31" width="343" height="194"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="QHy-6h-bmI" firstAttribute="leading" secondItem="9vA-70-mlP" secondAttribute="leadingMargin" constant="5" id="Ses-GW-G1l"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="QHy-6h-bmI" secondAttribute="trailing" constant="5" id="WSP-NB-BF8"/>
+                                                <constraint firstItem="QHy-6h-bmI" firstAttribute="top" secondItem="9vA-70-mlP" secondAttribute="topMargin" constant="20" id="dgX-gI-WGC"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="QHy-6h-bmI" secondAttribute="bottom" constant="20" id="hcd-6T-SIV"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" name="backgroundColor"/>
+                                        <connections>
+                                            <outlet property="astroanutDescription" destination="QHy-6h-bmI" id="R2j-2Y-tL7"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="2nc-0h-Vy8"/>
+                        <color key="backgroundColor" name="backgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="2nc-0h-Vy8" firstAttribute="bottom" secondItem="E8l-XS-i2D" secondAttribute="bottom" id="Urd-ab-vVW"/>
+                            <constraint firstItem="E8l-XS-i2D" firstAttribute="leading" secondItem="2nc-0h-Vy8" secondAttribute="leading" id="VAw-tB-tzi"/>
+                            <constraint firstItem="E8l-XS-i2D" firstAttribute="leading" secondItem="2nc-0h-Vy8" secondAttribute="leading" id="b9d-HG-xfM"/>
+                            <constraint firstItem="E8l-XS-i2D" firstAttribute="top" secondItem="2nc-0h-Vy8" secondAttribute="top" id="cZA-1E-1iE"/>
+                            <constraint firstItem="2nc-0h-Vy8" firstAttribute="trailing" secondItem="E8l-XS-i2D" secondAttribute="trailing" id="kCh-Xb-WGW"/>
+                            <constraint firstItem="E8l-XS-i2D" firstAttribute="top" secondItem="2nc-0h-Vy8" secondAttribute="top" id="mxa-XY-Ri9"/>
+                            <constraint firstItem="E8l-XS-i2D" firstAttribute="trailing" secondItem="2nc-0h-Vy8" secondAttribute="trailing" id="rig-mD-Q2h"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="1TL-dd-tnv"/>
+                    <connections>
+                        <outlet property="astronautHeaderView" destination="KB5-Mv-djX" id="pD8-H2-hJe"/>
+                        <outlet property="astronautTableView" destination="E8l-XS-i2D" id="Clk-p7-LqW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AhU-XW-sYG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2922.9007633587785" y="-27.464788732394368"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kDx-hQ-fFS">

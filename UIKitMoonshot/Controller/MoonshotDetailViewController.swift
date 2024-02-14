@@ -14,7 +14,6 @@ class MoonshotDetailViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     var mission: Mission?
-    var crew: Mission.CrewRole?
     var astronauts = [String: Astronaut]()
     
     private let sectionInsets = UIEdgeInsets(top: 20.0, left: 10.0, bottom: 20.0, right: 10.0)
@@ -79,6 +78,24 @@ extension MoonshotDetailViewController: UICollectionViewDelegate, UICollectionVi
         }
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showAstronautDetail", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showAstronautDetail" {
+            if let indexPath = collectionView.indexPathsForSelectedItems?.first {
+                let destinationController = segue.destination as! AstronautDetailViewController
+                // destinationController.astronaut = self.astronauts[indexPath.row]
+                let astronautId = mission?.crew[indexPath.item].name
+                
+                if let astronaut = astronauts[astronautId!] {
+                    destinationController.astronaut = astronaut
+                }
+            }
+        }
     }
     
 }
