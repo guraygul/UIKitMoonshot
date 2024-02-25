@@ -19,9 +19,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Wzk-2u-KEn">
-                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Wzk-2u-KEn">
+                                <rect key="frame" x="0.0" y="103" width="393" height="749"/>
                                 <color key="backgroundColor" red="0.10000000000000001" green="0.10000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="l6g-zX-CG0">
                                     <size key="itemSize" width="172" height="218"/>
@@ -99,8 +98,14 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.10000000000000001" green="0.10000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Wzk-2u-KEn" secondAttribute="bottom" id="1mN-qW-RDe"/>
+                            <constraint firstItem="Wzk-2u-KEn" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="78X-5g-vqs"/>
+                            <constraint firstItem="Wzk-2u-KEn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Of9-T7-bGq"/>
+                            <constraint firstItem="Wzk-2u-KEn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ndB-QT-Ne4"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Moonshot" id="BZb-hf-Xse"/>
+                    <navigationItem key="navigationItem" title="Moonshot" largeTitleDisplayMode="always" id="BZb-hf-Xse"/>
                     <connections>
                         <outlet property="moonshotCollectionView" destination="Wzk-2u-KEn" id="cN2-dX-YY8"/>
                         <segue destination="VfB-D0-ics" kind="show" identifier="showDetail" id="3h9-B1-58b"/>
@@ -119,7 +124,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="mNl-pb-wZ9">
-                                <rect key="frame" x="0.0" y="155" width="393" height="1311"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="1397"/>
                                 <color key="backgroundColor" name="backgroundColor"/>
                                 <color key="sectionIndexBackgroundColor" name="backgroundColor"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="0Xj-8z-fR2" userLabel="Header View" customClass="MoonshotDetailHeaderView" customModule="UIKitMoonshot" customModuleProvider="target">
@@ -275,10 +280,10 @@
                             <constraint firstItem="mgP-n2-vd8" firstAttribute="trailing" secondItem="mNl-pb-wZ9" secondAttribute="trailing" id="1ST-lR-c2V"/>
                             <constraint firstItem="mNl-pb-wZ9" firstAttribute="leading" secondItem="mgP-n2-vd8" secondAttribute="leading" id="UQF-XI-VW2"/>
                             <constraint firstItem="mNl-pb-wZ9" firstAttribute="top" secondItem="mgP-n2-vd8" secondAttribute="top" id="dEN-6e-XW7"/>
-                            <constraint firstItem="mgP-n2-vd8" firstAttribute="bottom" secondItem="mNl-pb-wZ9" secondAttribute="bottom" id="hOv-o2-tcp"/>
+                            <constraint firstAttribute="bottom" secondItem="mNl-pb-wZ9" secondAttribute="bottom" id="hOv-o2-tcp"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="SpK-YQ-PzB"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="SpK-YQ-PzB"/>
                     <size key="freeformSize" width="393" height="1500"/>
                     <connections>
                         <outlet property="collectionView" destination="jyE-Tr-FFm" id="9mr-RN-LGd"/>
@@ -300,7 +305,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="E8l-XS-i2D">
-                                <rect key="frame" x="0.0" y="155" width="393" height="663"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="749"/>
                                 <color key="backgroundColor" name="backgroundColor"/>
                                 <color key="sectionIndexBackgroundColor" name="backgroundColor"/>
                                 <view key="tableHeaderView" contentMode="scaleAspectFill" id="KB5-Mv-djX" customClass="AstronautDetailImageView" customModule="UIKitMoonshot" customModuleProvider="target">
@@ -351,7 +356,7 @@
                         <viewLayoutGuide key="safeArea" id="2nc-0h-Vy8"/>
                         <color key="backgroundColor" name="backgroundColor"/>
                         <constraints>
-                            <constraint firstItem="2nc-0h-Vy8" firstAttribute="bottom" secondItem="E8l-XS-i2D" secondAttribute="bottom" id="Urd-ab-vVW"/>
+                            <constraint firstAttribute="bottom" secondItem="E8l-XS-i2D" secondAttribute="bottom" id="Urd-ab-vVW"/>
                             <constraint firstItem="E8l-XS-i2D" firstAttribute="leading" secondItem="2nc-0h-Vy8" secondAttribute="leading" id="VAw-tB-tzi"/>
                             <constraint firstItem="E8l-XS-i2D" firstAttribute="leading" secondItem="2nc-0h-Vy8" secondAttribute="leading" id="b9d-HG-xfM"/>
                             <constraint firstItem="E8l-XS-i2D" firstAttribute="top" secondItem="2nc-0h-Vy8" secondAttribute="top" id="cZA-1E-1iE"/>
@@ -375,10 +380,11 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gRU-QI-6cd" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="hZm-SJ-S07">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" largeTitles="YES" id="hZm-SJ-S07">
                         <rect key="frame" x="0.0" y="59" width="393" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="backgroundColor"/>
+                        <color key="barTintColor" name="backgroundColor"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>

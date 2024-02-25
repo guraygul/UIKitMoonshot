@@ -11,8 +11,8 @@ class MoonshotDetailViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var headerView: MoonshotDetailHeaderView!
-    
     @IBOutlet weak var collectionView: UICollectionView!
+    
     var mission: Mission?
     var astronauts = [String: Astronaut]()
     
@@ -21,11 +21,15 @@ class MoonshotDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationController?.navigationBar.prefersLargeTitles = false
+        
         // Do any additional setup after loading the view.
         if let mission = mission {
-            headerView.missionDateLabel.text = mission.formattedLaunchDate
             headerView.missionHeaderImageView.image = UIImage(named: mission.image)
+            navigationItem.title = "Apollo \(mission.id)"
         }
+        
+        headerView.missionDateLabel.text = mission?.launchDate?.formatted(date: .complete, time: .omitted) ?? "N/A"
         
         tableView.delegate = self
         tableView.dataSource = self

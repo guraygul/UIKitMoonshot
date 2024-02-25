@@ -8,7 +8,7 @@
 import UIKit
 
 class AstronautDetailViewController: UIViewController {
-
+    
     @IBOutlet weak var astronautTableView: UITableView!
     @IBOutlet weak var astronautHeaderView: AstronautDetailImageView!
     
@@ -16,17 +16,18 @@ class AstronautDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        navigationController?.navigationBar.prefersLargeTitles = false
+        
         // Do any additional setup after loading the view.
         astronautTableView.delegate = self
         astronautTableView.dataSource = self
         
         if let astronaut = astronaut {
             astronautHeaderView.astronautDetailImageView.image = UIImage(named: astronaut.id)
+            navigationItem.title = astronaut.name
         }
-        
     }
-
 }
 
 extension AstronautDetailViewController: UITableViewDelegate, UITableViewDataSource {

@@ -28,11 +28,7 @@ class MoonshotViewController: UIViewController {
     
 }
 
-extension MoonshotViewController: UICollectionViewDelegate {
-    
-}
-
-extension MoonshotViewController: UICollectionViewDataSource {
+extension MoonshotViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return missions.count
